@@ -11,8 +11,7 @@ ENV PAPERSPIGOT_CI_URL=$paperspigot_ci_url
 WORKDIR /opt/minecraft
 
 # Download paperclip
-#ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
-COPY paper-10.jar paperclip.jar
+ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
 
 # User
 RUN useradd -ms /bin/bash minecraft && \
@@ -21,7 +20,7 @@ RUN useradd -ms /bin/bash minecraft && \
 USER minecraft
 
 # Run paperclip and obtain patched jar
-RUN /usr/local/openjdk-11/bin/java -jar /opt/minecraft/paperclip.jar; exit 0
+RUN /usr/local/openjdk-11/bin/java -Dcom.mojang.eula.agree=true -jar /opt/minecraft/paperclip.jar; exit 0
 
 # Copy built jar
 RUN mv /opt/minecraft/cache/patched*.jar paperspigot.jar
