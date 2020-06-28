@@ -11,7 +11,8 @@ ENV PAPERSPIGOT_CI_URL=$paperspigot_ci_url
 WORKDIR /opt/minecraft
 
 # Download paperclip
-ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
+#ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
+COPY paper-10.jar paperclip.jar
 
 # User
 RUN useradd -ms /bin/bash minecraft && \
