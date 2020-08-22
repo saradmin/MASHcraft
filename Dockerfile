@@ -5,7 +5,7 @@ FROM openjdk:11 AS build
 
 MAINTAINER Marc Tönsing <marc@marc.tv>
 
-ARG paperspigot_ci_url=https://cdn.discordapp.com/attachments/742779128868241550/745101276278161478/1.16.2-r4.jar
+ARG paperspigot_ci_url=https://cdn.discordapp.com/attachments/742779128868241550/746543486081171537/1.16.2-r6.jar
 ENV PAPERSPIGOT_CI_URL=$paperspigot_ci_url
 
 WORKDIR /opt/minecraft
